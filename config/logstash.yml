@@ -1,2 +1,6 @@
 api.http.port: 9600
 http.host: '0.0.0.0'
+
+# Select default main pipeline. If not specify, it will process events log in round-robin fashion
+pipeline.id: 'my-main-pipeline'
+path.config: '/usr/share/logstash/pipeline/logstash1.conf'
