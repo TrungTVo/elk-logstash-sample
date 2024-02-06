@@ -21,5 +21,5 @@ VOLUME /usr/share/logstash/config/
 COPY ./config/ ./config/
 COPY ./pipeline/ ./pipeline/
 
-# Command to run Logstash
-CMD ["logstash"]
+# Command to run Logstash, select default configuration
+# CMD ["bin/logstash", "-f", "/usr/share/logstash/pipeline/logstash2.conf"]
