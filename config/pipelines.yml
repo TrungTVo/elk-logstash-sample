@@ -6,3 +6,5 @@
   path.config: '/usr/share/logstash/pipeline/codec_multiline.conf'
 - pipeline.id: csv_file
   path.config: '/usr/share/logstash/pipeline/csv_file.conf'
+- pipeline.id: demo_grok
+  path.config: '/usr/share/logstash/pipeline/demo_grok.conf'

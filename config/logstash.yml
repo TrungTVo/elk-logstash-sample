@@ -2,8 +2,8 @@ api.http.port: 9600
 http.host: '0.0.0.0'
 
 # to ensure events ordering and autodetect_column_names in CSV plugin
-pipeline.workers: 1
+# pipeline.workers: 1
 
 # Select default main pipeline. If not specify, it will process events log in round-robin fashion
-pipeline.id: 'csv_file'
-path.config: '/usr/share/logstash/pipeline/csv_file.conf'
+pipeline.id: 'demo_grok'
+path.config: '/usr/share/logstash/pipeline/demo_grok.conf'
