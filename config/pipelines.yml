@@ -4,3 +4,5 @@
   path.config: '/usr/share/logstash/pipeline/mutate.conf'
 - pipeline.id: codec_multiline
   path.config: '/usr/share/logstash/pipeline/codec_multiline.conf'
+- pipeline.id: csv_file
+  path.config: '/usr/share/logstash/pipeline/csv_file.conf'
