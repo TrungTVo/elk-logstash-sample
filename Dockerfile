@@ -15,11 +15,11 @@ RUN rm -f ./pipeline/logstash.conf
 EXPOSE 5044 9600
 
 # Mount pipeline and settings volumes
-VOLUME /usr/share/logstash/pipeline/
-VOLUME /usr/share/logstash/config/
+VOLUME /usr/share/logstash/pipeline/ \
+    /usr/share/logstash/config/ \
+    /usr/share/logstash/workspace_data/
 
-COPY ./config/ ./config/
-COPY ./pipeline/ ./pipeline/
+COPY ./ ./
 
 # Command to run Logstash, select default configuration
 # CMD ["bin/logstash", "-f", "/usr/share/logstash/pipeline/logstash2.conf"]

@@ -1,4 +1,6 @@
-- pipeline.id: my-logstash-pipeline_1
-  path.config: '/usr/share/logstash/pipeline/logstash1.conf'
-- pipeline.id: my-logstash-pipeline_2
-  path.config: '/usr/share/logstash/pipeline/logstash2.conf'
+- pipeline.id: simple
+  path.config: '/usr/share/logstash/pipeline/simple.conf'
+- pipeline.id: mutate
+  path.config: '/usr/share/logstash/pipeline/mutate.conf'
+- pipeline.id: codec_multiline
+  path.config: '/usr/share/logstash/pipeline/codec_multiline.conf'
