@@ -3,8 +3,10 @@ FROM docker.elastic.co/logstash/logstash:8.12.0
 
 USER root
 
-# Install Vim editor
-RUN apt-get update && apt-get install -y vim
+# Install Vim editor and ping command
+RUN apt-get update && \
+    apt-get install -y vim && \
+    apt-get install -y iputils-ping
 
 # Set the working directory
 WORKDIR /usr/share/logstash
@@ -14,12 +16,9 @@ RUN rm -f ./pipeline/logstash.conf
 # Expose ports 5044 and 9600
 EXPOSE 5044 9600
 
-# Mount pipeline and settings volumes
-VOLUME /usr/share/logstash/pipeline/ \
-    /usr/share/logstash/config/ \
-    /usr/share/logstash/workspace_data/
-
-COPY ./ ./
+COPY ../logstash/config/ ./config/
+COPY ../logstash/pipeline/ ./pipeline/
+COPY ../workspace_data/ ./workspace_data/
 
 # Command to run Logstash, select default configuration
 # CMD ["bin/logstash", "-f", "/usr/share/logstash/pipeline/logstash2.conf"]
