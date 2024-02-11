@@ -1,3 +1,11 @@
+# Use Docker Compose
+
+```
+docker compose up
+```
+
+Or build and run 2 separate containers as follow:
+
 # Filebeat:
 
 Build

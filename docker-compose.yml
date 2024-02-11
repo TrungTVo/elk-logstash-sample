@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  filebeat:
+    image: trungtvo/custom-filebeat:2.0
+    container_name: my-filebeat-ctn
+    build:
+      context: ./
+      dockerfile: ./filebeat/Dockerfile
+    volumes:
+      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ./workspace_data/:/usr/share/filebeat/workspace_data/
+  logstash:
+    image: trungtvo/custom-logstash:2.0
+    container_name: my-logstash-ctn
+    build:
+      context: ./
+      dockerfile: ./logstash/Dockerfile
+    volumes:
+      - ./logstash/config/:/usr/share/logstash/config/
+      - ./logstash/pipeline/:/usr/share/logstash/pipeline/
+      - ./workspace_data/:/usr/share/logstash/workspace_data/
+    ports:
+      - '5044:5044'
+      - '9600:9600'
