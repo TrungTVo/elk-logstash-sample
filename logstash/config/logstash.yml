@@ -1,5 +1,5 @@
 api.http.port: 9600
-http.host: '0.0.0.0'
+api.http.host: '0.0.0.0'
 
 # to ensure events ordering and autodetect_column_names in CSV plugin
 # pipeline.workers: 1

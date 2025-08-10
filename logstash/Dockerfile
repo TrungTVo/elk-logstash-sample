@@ -1,12 +1,12 @@
 # Use the official Logstash base image from Elastic
-FROM docker.elastic.co/logstash/logstash:8.12.0
+FROM docker.elastic.co/logstash/logstash:9.1.1
 
-USER root
+# USER root
 
 # Install Vim editor and ping command
-RUN apt-get update && \
-    apt-get install -y vim && \
-    apt-get install -y iputils-ping
+# RUN apt-get update && \
+#     apt-get install -y vim && \
+#     apt-get install -y iputils-ping
 
 # Set the working directory
 WORKDIR /usr/share/logstash
